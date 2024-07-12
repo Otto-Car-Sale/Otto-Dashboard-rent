@@ -56,21 +56,6 @@ const AddVehicleForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-   // Handle form submission
-  // const handleSubmit = async (e) => {
-
-  //   console.log(formData.image)
-  //   e.preventDefault();
-  //   try {
-  //     // Make a POST request to the backend API endpoint 
-  //     const response = await axios.post('http://localhost:3001/api/v1/vehicles/addVehicle', formData);
-  //     console.log('Vehicle added successfully:', response.data);
-  //     // Optionally, you can handle success here (e.g., display a success message)
-  //   } catch (error) {
-  //     // Handle error
-  //     console.error('Error adding vehicle:', error);
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -86,10 +71,6 @@ const AddVehicleForm = () => {
       formData.image.forEach((photo, index) => {
         formDataToSend.append(`photo${index}`, photo);
       });
-  
-      // Make a POST request to the backend API endpoint 
-      //const response = await axios.post('http://localhost:3001/api/v1/vehicles/addVehicle', formDataToSend);
-
 
       console.log('Vehicle added successfully:', formData);
       // Optionally, you can handle success here (e.g., display a success message)
@@ -135,7 +116,7 @@ const AddVehicleForm = () => {
             <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} style={{ width: '100%', padding: '10px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '5px' }} />
           </div>
           <div style={{ width: '48%' }}>
-            <label htmlFor="numberOfDoors">Number of Doors</label>
+            <label htmlFor="numberOfDoors">Doors</label>
             <input type="number" name="numberOfDoors" value={formData.numberOfDoors} onChange={handleChange} style={{ width: '100%', padding: '10px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '5px' }} />
           </div>
         </div>
